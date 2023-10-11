@@ -122,6 +122,13 @@ function env.parse(body)
 		for j = 1, #line do
 			local char = line:sub(j, j)
 
+			-- im lazy i know
+			print(char,
+				"isInQoutes: " .. (isInQoutes and "yes" or "no"),
+				"isEscaped: " .. (isEscaped and "yes" or "no"),
+				"shouldEscapeEnd: " .. (shouldEscapeEnd and "yes" or "no")
+			)
+
 			if isEscaped then
 				shouldEscapeEnd = true
 			end
